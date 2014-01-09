@@ -51,6 +51,7 @@ window.MobSales = window.MobSales || {};
         //}
 
         //wo.removeCurrentWorkout();
+        console.log("startapp");
         ms.app.navigate();
     }
 
@@ -84,8 +85,8 @@ window.MobSales = window.MobSales || {};
         if (currentBackAction) {
             currentBackAction();
         } else {
-            if (wo.app.canBack()) {
-                wo.app.back();
+            if (ms.app.canBack()) {
+                ms.app.back();
             } else {
                 if (confirm("Are you sure you want to exit?")) {
                     switch (device.platform) {
@@ -105,6 +106,7 @@ window.MobSales = window.MobSales || {};
     }
 
     function onDeviceReady() {
+        console.log("deviceready");
         document.addEventListener("backbutton", onBackButton, false);
        //document.addEventListener("pause", wo.saveCurrentWorkout, false);
         navigator.splashscreen.hide();
@@ -113,7 +115,7 @@ window.MobSales = window.MobSales || {};
     $(function () {
         // Uncomment the line below to disable platform-specific look and feel and to use the Generic theme for all devices
         // DevExpress.devices.current({ platform: "generic" });
-
+        console.log("start");
         app = ms.app = new DevExpress.framework.html.HtmlApplication(APP_SETTINGS);
         app.router.register(":view/:action/:item", { view: "Home", action: undefined, item: undefined });
         ms.app.viewShown.add(onViewShown);
@@ -125,7 +127,7 @@ window.MobSales = window.MobSales || {};
         setTimeout(function () {
             document.addEventListener("deviceready", onDeviceReady, false);
             //window.onunload = wo.saveCurrentWorkout;
-
+            console.log("delay");
             if (device.platform == "tizen") {
                 document.addEventListener("tizenhwkey", function (e) {
                     if (e.keyName === "back")
