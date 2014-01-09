@@ -1,0 +1,24 @@
+﻿.entity-name {
+    white-space: pre-wrap;
+    float: left; 
+}
+.entity-status {
+    font-size: 12px;
+    float: right; 
+}
+
+.actions  {
+    margin: 10px;
+}
+
+.actions .dx-button {
+    margin: 10px 0;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+}
+
+.dx-content .actions .dx-button .dx-button-content .dx-button-text {
+    font-size: 18px;
+    line-height: 40px;
+}

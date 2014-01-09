@@ -9,11 +9,17 @@
                 "icon": "home",
                 "location": "navigation"
             },
+             {
+                 "id": "Settings",
+                 "title": "Settings",
+                 "action": "#Settings",
+                 "icon": "card"
+             }, 
             {
                 "id": "About",
                 "title": "About",
                 "action": "#About",
-                "icon": "about",
+                "icon": "info",
                 "location": "navigation"
             }
         ]

@@ -20,6 +20,7 @@ window.MobSales = window.MobSales || {};
 
     var subviewMap = {
         "Home": [],
+        "Settings": [],
         "About": [],
     };
 
@@ -39,20 +40,11 @@ window.MobSales = window.MobSales || {};
         return testUri(subviewMap["Home"], uri);
     }
 
-    function startApp() {
-        //var current = wo.getCurrentFromStorage();
-
-        //if (current && confirm("Do you want to continue workout in progress?")) {
-        //    var workout = wo.createWorkoutViewModel();
-        //    workout.fromJS(current);
-        //    wo.currentWorkout = workout;
-        //    wo.app.navigate("Results");
-        //    return;
-        //}
-
-        //wo.removeCurrentWorkout();
-        console.log("startapp");
-        ms.app.navigate();
+    function startApp(needToSynchronize) {
+        if (needToSynchronize)
+            ms.app.navigate("Settings/1");
+        else
+            ms.app.navigate();
     }
 
     function onNavigate(args) {
@@ -106,7 +98,6 @@ window.MobSales = window.MobSales || {};
     }
 
     function onDeviceReady() {
-        console.log("deviceready");
         document.addEventListener("backbutton", onBackButton, false);
        //document.addEventListener("pause", wo.saveCurrentWorkout, false);
         navigator.splashscreen.hide();
@@ -115,15 +106,13 @@ window.MobSales = window.MobSales || {};
     $(function () {
         // Uncomment the line below to disable platform-specific look and feel and to use the Generic theme for all devices
         // DevExpress.devices.current({ platform: "generic" });
-        console.log("start");
         app = ms.app = new DevExpress.framework.html.HtmlApplication(APP_SETTINGS);
-        app.router.register(":view/:action/:item", { view: "Home", action: undefined, item: undefined });
+        app.router.register(":view/:item", { view: "Home", item: undefined });
         ms.app.viewShown.add(onViewShown);
         ms.app.navigationManager.navigating.add(onNavigate);
 
-        //wo.initUserData();
-        startApp();
-
+        startApp(!ms.dataservice.initUserData());
+        
         setTimeout(function () {
             document.addEventListener("deviceready", onDeviceReady, false);
             //window.onunload = wo.saveCurrentWorkout;

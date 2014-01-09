@@ -66,6 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.config.js" />
+    <Content Include="js\breeze.debug.js" />
+    <None Include="js\breeze.intellisense.js" />
+    <Content Include="js\breeze.min.js" />
     <Content Include="cordova.js" />
     <Content Include="css\dx.android.holo-dark.css" />
     <Content Include="css\dx.android.holo-light.css" />
@@ -76,6 +79,9 @@
     <Content Include="css\dx.tizen.white.css" />
     <Content Include="css\dx.win8.black.css" />
     <Content Include="css\dx.win8.white.css" />
+    <Content Include="js\datajs-1.1.1.js" />
+    <Content Include="js\datajs-1.1.1.min.js" />
+    <Content Include="js\dataservice.js" />
     <Content Include="index.css" />
     <Content Include="index.html" />
     <Content Include="index.js" />
@@ -112,10 +118,16 @@
     <Content Include="layouts\Split\SplitLayout.css" />
     <Content Include="layouts\Split\SplitLayout.html" />
     <Content Include="layouts\Split\SplitLayout.js" />
+    <Content Include="js\logger.js" />
+    <Content Include="js\q.js" />
+    <Content Include="js\q.min.js" />
     <Content Include="views\About.html" />
-    <Content Include="views\Home.css" />
+    <Content Include="views\home.css" />
     <Content Include="views\Home.html" />
     <Content Include="views\Home.js" />
+    <Content Include="views\settings.css" />
+    <Content Include="views\Settings.html" />
+    <Content Include="views\Settings.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
