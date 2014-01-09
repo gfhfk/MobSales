@@ -1,4 +1,4 @@
-﻿MyApp.home = function (params) {
+﻿MobSales.Home = function (params) {
 
     var viewModel = {
 //  Put the binding properties here
