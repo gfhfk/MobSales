@@ -1,0 +1,12 @@
+﻿<div data-options="dxView : { name: 'OrderDetails', title: 'Details' } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div data-bind="dxList: { items: orderDetails }">
+            <div data-options="dxTemplate : { name: 'item' } ">
+                <div>
+                    <div class="orderDetails-productName" data-bind="text: ProductName"></div>
+                    <div class="orderDetails-quantity" data-bind="text: Globalize.format(Quantity(), 'n2')"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

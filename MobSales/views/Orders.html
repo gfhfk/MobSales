@@ -1,0 +1,14 @@
+﻿<div data-options="dxView : { name: 'Orders', title: 'Orders' } ">
+    <!--<div data-options="dxCommand: { title: 'Create', location: 'create', icon: 'add', action: '#createOrder/{customerID}', showIcon:false }"></div>-->
+    <div data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div data-bind="dxList: { items: orders }">
+            <div data-options="dxTemplate : { name: 'item' } " data-bind=" dxAction: '#OrderDetails/{OrderID}'">
+                <div>
+                    <div class="order-date" data-bind="text: Globalize.format(Date(), 'yyyy-MM-dd')"></div>
+                    <div data-bind="text: Globalize.format(TotalSum(), 'c2')"></div>
+                    <div class="order-comment" data-bind="text: Comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

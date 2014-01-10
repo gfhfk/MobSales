@@ -125,6 +125,12 @@
     <Content Include="views\home.css" />
     <Content Include="views\Home.html" />
     <Content Include="views\Home.js" />
+    <Content Include="views\orderDetails.css" />
+    <Content Include="views\OrderDetails.html" />
+    <Content Include="views\OrderDetails.js" />
+    <Content Include="views\orders.css" />
+    <Content Include="views\Orders.html" />
+    <Content Include="views\Orders.js" />
     <Content Include="views\settings.css" />
     <Content Include="views\Settings.html" />
     <Content Include="views\Settings.js" />

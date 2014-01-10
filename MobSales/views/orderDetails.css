@@ -1,0 +1,9 @@
+﻿.orderDetails-productName {
+    width: 78%;
+    float: left; 
+}
+.orderDetails-quantity {
+    display: inline-block;
+    width: 10%;
+    text-align: right;
+}

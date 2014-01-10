@@ -56,13 +56,6 @@ window.MobSales = window.MobSales || {};
             return;
         }
 
-        //if (args.options.location === "navigation" && args.options.target !== "back" && isWorkoutMaster(args.currentUri) && !isWorkoutMaster(args.uri)) {
-        //    if (!confirm("Cancel workout in progress?")) {
-        //        args.cancel = true;
-        //    } else {
-        //        wo.removeCurrentWorkout();
-        //    }
-        //}
     }
 
     function onViewShown(args) {
@@ -99,7 +92,6 @@ window.MobSales = window.MobSales || {};
 
     function onDeviceReady() {
         document.addEventListener("backbutton", onBackButton, false);
-       //document.addEventListener("pause", wo.saveCurrentWorkout, false);
         navigator.splashscreen.hide();
     }
 
