@@ -107,8 +107,6 @@ window.MobSales = window.MobSales || {};
         
         setTimeout(function () {
             document.addEventListener("deviceready", onDeviceReady, false);
-            //window.onunload = wo.saveCurrentWorkout;
-            console.log("delay");
             if (device.platform == "tizen") {
                 document.addEventListener("tizenhwkey", function (e) {
                     if (e.keyName === "back")
