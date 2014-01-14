@@ -113,7 +113,7 @@ window.MobSales = window.MobSales || {};
                         onBackButton();
                 });
             }
-        }, 4000);
+        }, 10000);
     });
 //    DevExpress.viz.core.currentTheme(DevExpress.devices.current().platform);
 }();
