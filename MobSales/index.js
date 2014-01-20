@@ -100,8 +100,6 @@ window.MobSales = window.MobSales || {};
         // DevExpress.devices.current({ platform: "generic" });
         app = ms.app = new DevExpress.framework.html.HtmlApplication(APP_SETTINGS);
         app.router.register(":view/:item", { view: "Home", item: undefined });
-        ms.app.viewShown.add(onViewShown);
-        ms.app.navigationManager.navigating.add(onNavigate);
 
         startApp(!ms.dataservice.initUserData());
         
@@ -115,5 +113,6 @@ window.MobSales = window.MobSales || {};
             }
         }, 1000);
     });
+//    DevExpress.devices.current({ platform: 'ios' });
 //    DevExpress.viz.core.currentTheme(DevExpress.devices.current().platform);
 }();

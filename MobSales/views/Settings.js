@@ -6,12 +6,9 @@
     var vm = {
         entityList: ko.observableArray([]),
         loading: ko.observableArray(),
-        viewShowing: function () {
+        viewShown: function () {
             if (needToSynchonize)
                 getEntities();
-        },
-        viewShown: function () {
-            $(".dx-active-view .dx-scrollable").data("dxScrollView").scrollTo(0);
         },
         synchData: getEntities,
 
