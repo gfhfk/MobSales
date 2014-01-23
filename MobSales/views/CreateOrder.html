@@ -1,0 +1,99 @@
+﻿<div data-options="dxView : { name: 'CreateOrder', title:'New Order' } ">
+    <div data-bind="dxCommand: { id: 'back', title: 'Orders', location: 'back', type: 'back', action: cancelOrder }"></div>
+    <div data-bind="dxCommand: { title: 'Search', placeholder: 'Search...', location: 'create', icon: 'find', action: find, visible: (currentStep() === 1) }"></div>
+    <div data-bind="dxCommand: { title: 'Prev', location: 'edit',  action: previousStep, visible: (currentStep()>0) }"></div>
+    <div data-bind="dxCommand: { title: nextBtntext, location: 'save', action: nextStep }"></div>
+
+    <div data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <!-- ko if: currentStep()==0 -->
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Date</div>
+                <div class="dx-field-value" data-bind="dxDateBox: { value: newOrder().Date, format: 'date' }"></div>
+            </div>
+
+            <div class="dx-field">
+                <div class="dx-field-label">Delivery date</div>
+                <div class="dx-field-value" data-bind="dxDateBox: { value: newOrder().DeliveryDate, format: 'date' }"></div>
+            </div>
+
+            <div class="dx-field">
+                <div class="dx-field-label">Notes</div>
+                <div class="dx-field-value" data-bind="dxTextArea: { value: newOrder().Comment, rows: 5 }"></div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: currentStep()==1 -->
+        <div data-bind="dxLookup: { dataSource: productTypes, displayExpr: 'ProductTypeName', valueExpr: 'ProductTypeID', value: productTypeId, visible: showSearch }"></div>
+        <div>
+            <div class="orderDetails-productName">ProductName</div>
+            <div class="orderDetails-quantity">Price</div>
+            <div class="orderDetails-quantity">Q-ty</div>
+        </div>
+        <div data-bind="dxList: { dataSource: productList }">
+            <div data-options="dxTemplate : { name: 'item' } " data-bind="visible: filtered, click: function(){ $root.showOverlay($data); } ">
+                <div>
+                    <div class="orderDetails-productName" data-bind="text: ProductName"></div>
+                    <div class="orderDetails-quantity" data-bind="text: Price"></div>
+                    <div class="orderDetails-quantity" data-bind="text: Quantity"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: currentStep()==2 -->
+        <div>
+            <div class="orderDetails-productName">ProductName</div>
+            <div class="orderDetails-quantity">Q-ty</div>
+            <div class="orderDetails-sum">Sum</div>
+        </div>
+        <div data-bind="dxList: { dataSource: productList }">
+            <div data-options="dxTemplate : { name: 'item' } " data-bind="visible: Quantity()>0 ">
+                <div>
+                    <div class="orderDetails-productName" data-bind="text: ProductName"></div>
+                    <div class="orderDetails-quantity" data-bind="text: Quantity"></div>
+                    <div class="orderDetails-sum" data-bind="text: sum"></div>
+                </div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Total:</div>
+            <div class="dx-field-value" data-bind="text: totalSum"></div>
+        </div>
+        <!-- /ko -->
+        <div id="overlayContainer" data-bind="dxOverlay: { visible: overlayVisible }">
+            <div class="overlayContents">
+                <div class="calculator">
+                    <div class="u4 display">
+                        <div class="display-inner"><div class="display-text" data-bind="text:display"></div></div>
+                    </div>
+                    <div class="dx-field-value">
+                        <div class="button button-gray" data-bind="dxButton: { text: '7' , clickAction: numberClick}"></div>
+                        <div class="button button-gray" data-bind="dxButton: { text: '8' , clickAction: numberClick}"></div>
+                        <div class="button button-gray" data-bind="dxButton: { text: '9' , clickAction: numberClick}"></div>
+                    </div>
+                    <div class="dx-field-value">
+                        <div class="button button-gray" data-bind="dxButton: { text: '4' , clickAction: numberClick}"></div>
+                        <div class="button button-gray" data-bind="dxButton: { text: '5' , clickAction: numberClick }"></div>
+                        <div class="button button-gray" data-bind="dxButton: { text: '6' , clickAction: numberClick}"></div>
+                    </div>
+                    <div class="dx-field-value">
+                        <div class="button button-gray" data-bind="dxButton: { text: '1' , clickAction: numberClick}"></div>
+                        <div class="button button-gray" data-bind="dxButton: { text: '2' , clickAction: numberClick}"></div>
+                        <div class="button button-gray" data-bind="dxButton: { text: '3' , clickAction: numberClick}"></div>
+                    </div>
+                    <div class="dx-field-value">
+                        <div class="button button-red" data-bind="dxButton: { text: 'c', clickAction: clearClick  }"></div>
+                        <div class="u1 button button-gray" data-bind="dxButton: { text: '0' , clickAction: numberClick}"></div>
+                        <div class="button button-backspace button-gray" data-bind="dxButton: { text: '&#x21e4' , clickAction: backspaceClick }"></div>
+                    </div>
+                    <div class="dx-field-value">
+                        <div class="button" data-bind="dxButton: { text: 'Hide overlay', clickAction: hideOverlay }"></div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

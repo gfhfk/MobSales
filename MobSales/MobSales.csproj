@@ -122,6 +122,8 @@
     <Content Include="js\q.js" />
     <Content Include="js\q.min.js" />
     <Content Include="views\About.html" />
+    <Content Include="views\CreateOrder.html" />
+    <Content Include="views\CreateOrder.js" />
     <Content Include="views\home.css" />
     <Content Include="views\Home.html" />
     <Content Include="views\Home.js" />
