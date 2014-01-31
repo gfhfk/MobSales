@@ -1,0 +1,74 @@
+﻿
+/*  ######################### 
+ *	### Calculator styles ###
+ *  ######################### */
+
+.calculator {
+     
+}
+.u1 , 
+.u2,
+.u3,
+.u4 {
+
+}
+.calcRow {
+    width:100%;
+     display: table;
+   
+}
+.calcCell {
+    display: table-cell;
+    overflow: hidden;
+	vertical-align: middle;
+     min-width:50px;
+}
+
+.u2 {
+    width: 86px;
+}
+.u3 {
+    width: 132px;
+}
+.u4 {
+    width: 100%;
+}
+
+
+.display {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: inset 0 1px 1px #0A0B0D, 0px 1px #5E6370;
+	-webkit-box-shadow: inset 0 1px 1px #0A0B0D, 0px 1px #5E6370;
+	box-shadow: inset 0 1px 1px #0A0B0D, 0px 1px #5E6370;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	background-color: #17181E;
+	border: 1px solid #181A20;
+	padding: 0 10px;
+	text-align: right;
+}
+
+.display-inner {
+
+    overflow: hidden;
+}
+.display-text {
+	color: #fff;
+	font-size: 22px;
+	line-height: 42px;
+	overflow: hidden;
+	unicode-bidi: embed;
+
+    float: right;
+}
+
+.button {
+    overflow: hidden;
+	vertical-align: middle;
+    display: table-cell;
+    min-width:50px;
+
+}
