@@ -1,8 +1,8 @@
 ﻿<div data-options="dxView : { name: 'CreateOrder', title:'New Order' } ">
-    <div data-bind="dxCommand: { id: 'back', title: 'Orders', location: 'back', type: 'back', action: cancelOrder }"></div>
-    <div data-bind="dxCommand: { title: 'Search', placeholder: 'Search...', location: 'create', icon: 'find', action: find, visible: (currentStep() === 1) }"></div>
-    <div data-bind="dxCommand: { title: 'Prev', location: 'edit',  action: previousStep, visible: (currentStep()>0) }"></div>
-    <div data-bind="dxCommand: { title: nextBtntext, location: 'save', action: nextStep }"></div>
+    <div data-bind="dxCommand: { id: 'back', title: 'Orders', action: cancelOrder }"></div>
+    <div data-bind="dxCommand: { id: 'search',title: 'Search', placeholder: 'Search...', icon: 'find', action: find, visible: (currentStep() === 1) }"></div>
+    <div data-bind="dxCommand: { id: 'edit', title: 'Prev',   action: previousStep, visible: (currentStep()>0) }"></div>
+    <div data-bind="dxCommand: { id: 'save',title: nextBtntext, action: nextStep }"></div>
 
     <div data-options="dxContent : { targetPlaceholder: 'content' } ">
         <!-- ko if: currentStep()==0 -->

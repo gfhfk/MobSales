@@ -1,8 +1,11 @@
 ﻿MobSales.CreateOrder = function (params) {
-    logger = MobSales.logger;
+    logger = MobSales.logger,
+    app = MobSales;
+
     var viewModel = {
 
         customerID: params.id,
+        // Wizard
         steps: [
             { text: "New Order" },
             { text: "Select Products" },
@@ -11,30 +14,52 @@
         backBtntext: ko.observable('Cancel'),
         nextBtntext: ko.observable('Next'),
         currentStep: ko.observable(0),
+        previousStep: previousStep,
+        nextStep: nextStep,
+        // data
         newOrder: ko.observable(createOrder(params.id)),
-        showSearch: ko.observable(false),
-        overlayVisible: ko.observable(false),
-        productTypeId: ko.observable(0),
         productTypes: ko.observableArray(),
         currentElemet: ko.observableArray(),
-        display: ko.observable("0"),
         orderDetails: ko.observableArray(),
+        productList: ko.observableArray(),
+        // filters
+        productTypeId: ko.observable(0),
+        showSearch: ko.observable(false),
         find: function () {
             viewModel.showSearch(!viewModel.showSearch());
             viewModel.productTypeId(0);
         },
-        productList: ko.observableArray(),
-
-        previousStep: previousStep,
-        nextStep: nextStep,
+        //calsulator
+        overlayVisible: ko.observable(false),
+        display: ko.observable("0"),
         cancelOrder: cancelOrder,
         showOverlay: showOverlay,
         hideOverlay: hideOverlay,
         numberClick: numberClick,
         backspaceClick: backspaceClick,
-        clearClick: clearClick
-    };
+        clearClick: clearClick,
 
+        viewShowing: viewShowing,
+    };
+    function viewShowing() {
+        viewModel.productTypes(app.dataservice.getProductTypes());
+        viewModel.productTypes.unshift({ ProductTypeID: 0, ProductTypeName: "All..." });
+        viewModel.productList (app.dataservice.getProducts().map(function (item) {
+                        item.Quantity = ko.observable(0);
+                        item.filtered = ko.computed(function () {
+                            var ret = true;
+                            if (viewModel.productTypeId() > 0 && viewModel.productTypeId() != item.ProductTypeID())
+                                ret = false;
+                            return ret;
+                        });
+                        item.sum = ko.computed(function () {
+                            return Math.round(item.Price() * item.Quantity() * 100) / 100;
+                        });
+                        return item;
+
+                    }));
+
+    }
     //MSalesApp.dataservice.getAllProductTypes().
     //    then(function (data) {
     //        viewModel.productTypes = data.results;
@@ -91,7 +116,7 @@
 
     function createOrder(customerID) {
 
-        return MSalesApp.dataservice.createOrder(customerID);
+        return app.dataservice.createOrder(customerID);
     };
     viewModel.currentStep.subscribe(function (value) {
         if (value == 0) {

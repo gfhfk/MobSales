@@ -52,6 +52,12 @@ MobSales.dataservice = function ($, DX, app, undefined) {
     function  getRoutes(){
         return manager.executeQueryLocally(queries.Routes.query);
     };
+    function getProductTypes() {
+        return manager.executeQueryLocally(queries.ProductTypes.query);
+    };
+    function getProducts() {
+        return manager.executeQueryLocally(queries.Products.query);
+    };
     function getCustomers() {
         return manager.executeQueryLocally(queries.Customers.query);
     };
@@ -83,6 +89,23 @@ MobSales.dataservice = function ($, DX, app, undefined) {
         var exportData = manager.exportEntities();
         localStorage.setItem(DATA_KEY, exportData);
     }
+
+    function createOrder(customerID) {
+     
+        var today = new Date();
+        var tomorrow = new Date();
+        tomorrow.setDate(today.getDate() + 1);
+        var orderType = manager.metadataStore.getEntityType("Order");
+        var newOrder = orderType.createEntity({
+            OrderID: breeze.core.getUuid(),
+            CustomerID: customerID,
+            Date: today,
+            DeliveryDate: tomorrow,
+        });
+
+        return manager.addEntity(newOrder);
+    }
+
     var dataservice =  {
         manager: manager,
         metadataStore: manager.metadataStore,
@@ -94,6 +117,9 @@ MobSales.dataservice = function ($, DX, app, undefined) {
         saveDataLocally: saveDataLocally,
         getOrders: getOrders,
         getOrderDetails: getOrderDetails,
+        getProductTypes: getProductTypes,
+        getProducts: getProducts,
+        createOrder: createOrder,
     };
     return dataservice;
 }(jQuery, DevExpress, MobSales);

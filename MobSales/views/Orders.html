@@ -1,5 +1,6 @@
 ﻿<div data-options="dxView : { name: 'Orders', title: 'Orders' } ">
-    <div data-options="dxCommand: { title: 'Create', id: 'create', location: 'create', icon: 'add', action: '#CreateOrder/{customerID}', showIcon:false }"></div>
+    <div data-options="dxCommand: { id: 'create', action: '#CreateOrder/{customerID}', icon: 'add', title: 'Create' } "></div>
+    <!--<div data-options="dxCommand: { title: 'Create', id: 'create', location: 'create', icon: 'add', clickAction: '#CreateOrder/{customerID}', showIcon:false }"></div>-->
     <div data-options="dxContent : { targetPlaceholder: 'content' } ">
         <div data-bind="dxList: { items: orders }">
             <div data-options="dxTemplate : { name: 'item' } " data-bind=" dxAction: '#OrderDetails/{OrderID}'">

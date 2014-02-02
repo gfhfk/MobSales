@@ -3,38 +3,14 @@
  *	### Calculator styles ###
  *  ######################### */
 
-.calculator {
-     
+.overlayContents{
+  padding: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 15px;
+  height:auto;
+  background-color:#5F5F5F;
 }
-.u1 , 
-.u2,
-.u3,
-.u4 {
-
-}
-.calcRow {
-    width:100%;
-     display: table;
-   
-}
-.calcCell {
-    display: table-cell;
-    overflow: hidden;
-	vertical-align: middle;
-     min-width:50px;
-}
-
-.u2 {
-    width: 86px;
-}
-.u3 {
-    width: 132px;
-}
-.u4 {
-    width: 100%;
-}
-
-
 .display {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -64,11 +40,6 @@
 
     float: right;
 }
-
-.button {
-    overflow: hidden;
-	vertical-align: middle;
-    display: table-cell;
-    min-width:50px;
-
+.сbutton .dx-widget .dx-feedback .dx-button .dx-button-normal{
+   width:27%;
 }
