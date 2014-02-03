@@ -1,8 +1,4 @@
 ﻿
-/*  ######################### 
- *	### Calculator styles ###
- *  ######################### */
-
 .overlayContents{
   padding: 10px;
   border-width: 2px;
@@ -11,6 +7,52 @@
   height:auto;
   background-color:#5F5F5F;
 }
+.dx-theme-ios .overlayContents{
+  border-color:#43628D;
+  background-color:#F7F7F7;
+}
+.dx-theme-android .overlayContents{
+  border-color:#FFFFFF;
+  background-color:#5F5F5F;
+}
+.dx-theme-win8 .overlayContents{
+  border-color: #E4E4E4;
+  background-color:#333333;
+}
+
+
+.order-comment {
+    font-size: 12px;
+}
+.orderDetails-productName {
+    width: 78%;
+    float: left; 
+}
+.orderDetails-quantity {
+    display: inline-block;
+    width: 10%;
+    text-align: right;
+}
+.orderDetails-sum {
+    display: inline;
+    width:10%;
+    float: right; 
+
+}
+
+.calculator-raw {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    padding-top: 5px
+}
+
+.calculator-cell {
+    width:33.333%;
+    float: left;
+}
+
+
 .display {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -39,7 +81,4 @@
 	unicode-bidi: embed;
 
     float: right;
-}
-.сbutton .dx-widget .dx-feedback .dx-button .dx-button-normal{
-   width:27%;
 }

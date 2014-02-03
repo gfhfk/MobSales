@@ -22,6 +22,7 @@
         currentElemet: ko.observableArray(),
         orderDetails: ko.observableArray(),
         productList: ko.observableArray(),
+        totalSum: ko.observable(0),
         // filters
         productTypeId: ko.observable(0),
         showSearch: ko.observable(false),
@@ -40,6 +41,7 @@
         clearClick: clearClick,
 
         viewShowing: viewShowing,
+
     };
     function viewShowing() {
         viewModel.productTypes(app.dataservice.getProductTypes());
@@ -57,49 +59,11 @@
                         });
                         return item;
 
-                    }));
+        }));
+        
 
     }
-    //MSalesApp.dataservice.getAllProductTypes().
-    //    then(function (data) {
-    //        viewModel.productTypes = data.results;
-    //        viewModel.productTypes.unshift({ ProductTypeID: 0, ProductTypeName: "All..." });
-    //    }).fail(function (error) {
-    //        logger.error("Load data error. Try later.");
-    //        logger.log(error);
-    //    });
-    //MSalesApp.dataservice.getAllProducts().
-    //    then(function (data) {
-    //        viewModel.productList = ko.observableArray($.map(data.results, function (item) {
-    //            item.Quantity = ko.observable(0);
-    //            item.filtered = ko.computed(function () {
-    //                var ret = true;
-    //                if (viewModel.productTypeId() > 0 && viewModel.productTypeId() != item.ProductTypeID())
-    //                    ret = false;
-    //                return ret;
-    //            });
-    //            item.sum = ko.computed(function () {
-    //                return Math.round(item.Price() * item.Quantity() * 100) / 100;
-    //            });
-    //            return item;
-
-    //        }));
-    //        viewModel.totalSum = ko.computed(function () {
-    //            var total = 0;
-    //            ko.utils.arrayForEach(this.productList(), function (item) {
-    //                var value = parseFloat(item.sum());
-    //                if (!isNaN(value)) {
-    //                    total += value;
-    //                }
-    //            });
-    //            return total.toFixed(2);
-    //        }, viewModel);
-    //    }).fail(function (error) {
-    //        logger.error("Load data error. Try later.");
-    //        logger.log(error);
-    //    });
-
-
+  
 
     function cancelOrder() {
         if (!confirm("Are you sure you want to cancel this Oreder?"))
@@ -132,7 +96,16 @@
         }
 
     });
-
+    viewModel.totalSum = ko.computed(function () {
+        var total = 0;
+        ko.utils.arrayForEach(this.productList(), function (item) {
+            var value = parseFloat(item.sum());
+            if (!isNaN(value)) {
+                total += value;
+            }
+        });
+        return total.toFixed(2);
+    }, viewModel);
     function showOverlay(data) {
         viewModel.display(String(data.Quantity()));
         viewModel.overlayVisible(true);

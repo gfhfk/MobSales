@@ -3,6 +3,7 @@
 window.MobSales = window.MobSales || {};
 
 !function () {
+   
     var ms = window.MobSales,
         app,
         currentBackAction,
@@ -123,6 +124,7 @@ window.MobSales = window.MobSales || {};
     }
 
     $(function () {
+        FastClick.attach(document.body);
         // Uncomment the line below to disable platform-specific look and feel and to use the Generic theme for all devices
         // DevExpress.devices.current({ platform: "generic" });
         app = ms.app = new DevExpress.framework.html.HtmlApplication(APP_SETTINGS);

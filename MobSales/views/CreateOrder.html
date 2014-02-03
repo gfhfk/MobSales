@@ -41,11 +41,18 @@
         </div>
         <!-- /ko -->
         <!-- ko if: currentStep()==2 -->
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Total:</div>
+                <div class="dx-field-value" data-bind="text: totalSum"></div>
+            </div>
+        </div>
         <div>
             <div class="orderDetails-productName">ProductName</div>
             <div class="orderDetails-quantity">Q-ty</div>
             <div class="orderDetails-sum">Sum</div>
         </div>
+        
         <div data-bind="dxList: { dataSource: productList }">
             <div data-options="dxTemplate : { name: 'item' } " data-bind="visible: Quantity()>0 ">
                 <div>
@@ -55,45 +62,65 @@
                 </div>
             </div>
         </div>
-        <div class="dx-field">
-            <div class="dx-field-label">Total:</div>
-            <div class="dx-field-value" data-bind="text: totalSum"></div>
-        </div>
+
         <!-- /ko -->
         <div id="overlayContainer" data-bind="dxOverlay: { visible: overlayVisible }">
             <div class="overlayContents">
                 <div class="calculator">
-                    <div class="u4 display">
+                    <div class="display">
                         <div class="display-inner"><div class="display-text" data-bind="text:display"></div></div>
                     </div>
-                    <div class="dx-field-value">
-                        <div class="button button-gray" data-bind="dxButton: { text: '7' , clickAction: numberClick}"></div>
-                        <div class="button button-gray" data-bind="dxButton: { text: '8' , clickAction: numberClick}"></div>
-                        <div class="button button-gray" data-bind="dxButton: { text: '9' , clickAction: numberClick}"></div>
-                    </div>
-                    <div class="dx-field-value">
-                        <div class="button button-gray" data-bind="dxButton: { text: '4' , clickAction: numberClick}"></div>
-                        <div class="button button-gray" data-bind="dxButton: { text: '5' , clickAction: numberClick }"></div>
-                        <div class="button button-gray" data-bind="dxButton: { text: '6' , clickAction: numberClick}"></div>
-                    </div>
-                    <div class="dx-field-value">
-                        <div class="button button-gray" data-bind="dxButton: { text: '1' , clickAction: numberClick}"></div>
-                        <div class="button button-gray" data-bind="dxButton: { text: '2' , clickAction: numberClick}"></div>
-                        <div class="button button-gray" data-bind="dxButton: { text: '3' , clickAction: numberClick}"></div>
-                    </div>
-                    <div class="dx-field-value">
-                        <div class="button button-red" data-bind="dxButton: { text: 'c', clickAction: clearClick  }"></div>
-                        <div class="u1 button button-gray" data-bind="dxButton: { text: '0' , clickAction: numberClick}"></div>
-                        <div class="button button-backspace button-gray" data-bind="dxButton: { text: '&#x21e4' , clickAction: backspaceClick }"></div>
-                    </div>
-                    <div class="dx-field-value">
-                        <div class="button" data-bind="dxButton: { text: 'Hide overlay', clickAction: hideOverlay }"></div>
-                    </div>
-
+                    <fieldset class="calculator-raw">
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: '7' , clickAction: numberClick, width:'100%'}"></div>
+                        </div>
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: '8' , clickAction: numberClick, width:'100%'}"></div>
+                        </div>
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: '9' , clickAction: numberClick, width:'100%'}"></div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="calculator-raw">
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: '4' , clickAction: numberClick, width:'100%'}"></div>
+                        </div>
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: '5' , clickAction: numberClick, width:'100%'}"></div>
+                        </div>
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: '6' , clickAction: numberClick, width:'100%'}"></div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="calculator-raw">
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: '1' , clickAction: numberClick, width:'100%'}"></div>
+                        </div>
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: '2' , clickAction: numberClick, width:'100%'}"></div>
+                        </div>
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: '3' , clickAction: numberClick, width:'100%'}"></div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="calculator-raw">
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: 'c', clickAction: clearClick, width:'100%'}"></div>
+                        </div>
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text: '0' , clickAction: numberClick, width:'100%'}"></div>
+                        </div>
+                        <div class="calculator-cell">
+                            <div data-bind="dxButton: { text:'&#x21e4' , clickAction: backspaceClick, width:'100%'}"></div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="calculator-raw">
+                        <div data-bind="dxButton: { text: 'Close', clickAction: hideOverlay , width:'100%'}"></div>
+                    </fieldset>
 
                 </div>
             </div>
         </div>
-
     </div>
 </div>
+
