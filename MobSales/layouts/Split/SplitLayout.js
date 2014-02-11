@@ -27,12 +27,13 @@
         },
         _changeView: function(viewInfo) {
             var self = this;
-            this.callBase(viewInfo);
-            this._footerToolbar.option("items", []);
-            $.each(this._visibleViews, function(target, viewInfo) {
+            self.callBase(viewInfo);
+            self._footerToolbar.option("items", []);
+            $.each(self._visibleViews, function(target, viewInfo) {
                 if (viewInfo.commands)
                     self._commandManager._arrangeCommandsToContainers(viewInfo.commands, [self._appbarCommandContainer])
-            })
+            });
+            self._$mainLayout.toggleClass("has-navigation", "navigation" in self._visibleViews)
         },
         _getTargetFrame: function(viewInfo) {
             return (viewInfo.viewTemplateInfo || {}).targetFrame || (viewInfo.routeData || {}).placeholder || this.callBase(viewInfo)
@@ -56,13 +57,13 @@
             }
             if (self._backCommand)
                 viewInfo.commands.push(self._backCommand);
-            var $markup = this.callBase($viewTemplate, viewInfo);
+            this.callBase($viewTemplate, viewInfo);
+            var $markup = viewInfo.renderResult.$markup;
             $.each($markup.find(".dx-content-placeholder-content,.dx-content-placeholder-navigation"), function(index, el) {
                 var $contentPlaceholder = $(el);
                 if (!$contentPlaceholder.children(".dx-content").length)
                     $contentPlaceholder.remove()
-            });
-            return $markup
+            })
         },
         _appBarHasCommands: function() {
             var footerToolbar = this._$viewPort.find(".footer-toolbar").data("dxToolbar");

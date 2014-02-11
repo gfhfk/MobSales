@@ -16,7 +16,6 @@
             this.callBase(navigationCommands);
             var $navbar = this._$mainLayout.find(".navbar-container");
             if ($navbar.length && navigationCommands) {
-                $navbar.dxNavBar().dxCommandContainer({id: 'global-navigation'});
                 var container = $navbar.dxCommandContainer("instance");
                 this._commandManager._arrangeCommandsToContainers(navigationCommands, [container]);
                 this._$mainLayout.addClass(HAS_NAVBAR_CLASS)

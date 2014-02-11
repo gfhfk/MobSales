@@ -153,6 +153,7 @@
 .dx-theme-ios.dx-version-major-6 .slideout-layout .view-footer .dx-button {
     width: 97%;
     overflow: visible;
+    height: 40px;
 }
 
 .dx-theme-ios.dx-version-major-5 .slideout-layout .view-footer .dx-button .dx-button-content, 
@@ -170,13 +171,6 @@
 }
 
 /* iOS7 */
-.dx-theme-ios.dx-version-major-7 .slideout-layout .layout-frame {
-    -moz-box-shadow: -15px 0 20px rgba(0,0,0,.05);
-    -webkit-box-shadow: -15px 0 20px rgba(0,0,0,.05);
-    box-shadow: -15px 0 20px rgba(0,0,0,.05);
-}
-
-
 .dx-theme-ios.dx-version-major-7 .slideout-layout .navigation-list .dx-list {
     background: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -249,8 +243,8 @@
     height: 43px;
 }
 .dx-theme-ios.dx-version-major-7 .slideout-layout .layout-content {
-    top: 43px;
-    background-color: #fff;
+    top: 44px;
+    background-color: #EFEFF4;
 }
 
 .dx-theme-ios.dx-version-major-7 .slideout-layout .view-footer .dx-toolbar {
@@ -292,6 +286,10 @@
     top: 42px;
 }
 
+.dx-theme-android .slideout-layout .layout-header .dx-toolbar {
+    height: 40px;
+}
+
 /* Windows phone 8 */
 .dx-theme-win8.dx-color-scheme-white .slideout-layout .layout-content {
     background: #fff;
@@ -301,8 +299,12 @@
     background: #000;
 }
 
+.dx-theme-win8 .slideout-layout .layout-header {
+    height: 60px;    
+}
+
 .dx-theme-win8 .slideout-layout .layout-content {
-    top: 40px;    
+    top: 60px;    
 }
 
 .dx-theme-win8 .slideout-layout .layout-content.has-toolbar-bottom {
@@ -325,7 +327,7 @@
 }
 
 .dx-theme-win8 .slideout-layout .layout-header .dx-toolbar {
-    height: 45px;
+    height: 60px;
     opacity: 1;
 }
 .dx-theme-win8.dx-color-scheme-white .slideout-layout .layout-header .dx-toolbar {

@@ -31,7 +31,7 @@
             return $result
         },
         _showViewImpl: function(viewInfo, direction) {
-            this._showViewElements(viewInfo.renderResult.$transitionContentElements);
+            this._showViewElements(viewInfo.renderResult.$markup);
             this._changeView(viewInfo);
             this._changeAppbar();
             return $.Deferred().resolve().promise()

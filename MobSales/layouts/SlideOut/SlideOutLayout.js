@@ -94,7 +94,8 @@
                     $element = e.itemElement;
                 if (data.template === "nav-button")
                     $.proxy(showNavButton, self, $markup)()
-            })
+            });
+            toolbar.repaint()
         },
         _initNavigation: function($markup) {
             this._isNavigationVisible = false

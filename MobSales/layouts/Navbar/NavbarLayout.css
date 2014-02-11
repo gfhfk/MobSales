@@ -20,7 +20,6 @@
 
 .navbar-layout .layout-content > div,
 .navbar-layout .transition-frame {
-    -position: absolute;
     height: 100%;
     width: 100%;
 }
@@ -81,6 +80,7 @@
 .dx-theme-ios.dx-version-major-6 .navbar-layout .view-footer .dx-button {
     width: 97%;
     overflow: visible;
+    height: 40px;
 }
 
 .dx-theme-ios.dx-version-major-5 .navbar-layout .view-footer .dx-button .dx-button-content,
@@ -105,9 +105,9 @@
 }
 
 .dx-theme-ios.dx-version-major-7 .navbar-layout .layout-content {
-    top: 44px;
+    top: 45px;
     bottom: 0;
-    background-color: #fff;
+    background-color: #EFEFF4;
 }
 
 .dx-theme-ios.dx-version-major-7 .navbar-layout.has-navbar .layout-content {
@@ -247,7 +247,7 @@
     bottom: 0;
 }
 
-.dx-theme-tizen .navbar-layout .layout-content.has-toolbar {
+.dx-theme-tizen .navbar-layout.has-toolbar .layout-content {
     bottom: 40px;
 }
 
@@ -278,10 +278,11 @@
 
 .dx-theme-generic .navbar-layout .layout-content {
     top: 0;
-    bottom: 54px;
+    bottom: 76px;
+    background: #f3f3f3;
 }
 
-.dx-theme-generic .navbar-layout .layout-content.has-toolbar {
+.dx-theme-generic .navbar-layout.has-toolbar .layout-content {
     bottom: 76px;
 }
 
@@ -291,7 +292,7 @@
 
 .dx-theme-generic .navbar-layout .layout-footer {
     bottom: 0;
-    height: 54px;
+    height: 76px;
 }
 
 .dx-theme-generic .navbar-layout.has-toolbar .layout-footer {

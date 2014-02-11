@@ -6,9 +6,13 @@
 
 .dx-theme-win8 .split-layout {
     display: -ms-grid;
-    -ms-grid-columns: 620px minmax(min-content, 1fr);
+    -ms-grid-columns: 90px minmax(min-content, 1fr);
     -ms-grid-rows: 104px 1fr;
     height: 100%;    
+}
+
+.dx-theme-win8 .split-layout.has-navigation {
+    -ms-grid-columns: 620px minmax(min-content, 1fr);
 }
 
 .dx-theme-win8 .split-layout .layout-header {

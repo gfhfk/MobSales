@@ -83,6 +83,12 @@
     <Content Include="js\datajs-1.1.1.min.js" />
     <Content Include="js\dataservice.js" />
     <Content Include="index.css" />
+    <Content Include="js\modules\dx.module-core.debug.js" />
+    <Content Include="js\modules\dx.module-core.js" />
+    <Content Include="js\modules\dx.module-framework.debug.js" />
+    <Content Include="js\modules\dx.module-framework.js" />
+    <Content Include="js\modules\dx.module-widgets.debug.js" />
+    <Content Include="js\modules\dx.module-widgets.js" />
     <Content Include="main.html" />
     <Content Include="index.js" />
     <Content Include="js\dx.all.js" />

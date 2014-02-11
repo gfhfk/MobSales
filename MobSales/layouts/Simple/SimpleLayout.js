@@ -50,6 +50,22 @@
     });
     DX.framework.html.layoutControllers.push({
         navigationType: "simple",
+        platform: "ios",
+        controller: new DX.framework.html.SimpleLayoutController
+    });
+    DX.framework.html.layoutControllers.push({
+        navigationType: "simple",
+        platform: "android",
+        controller: new DX.framework.html.SimpleLayoutController
+    });
+    DX.framework.html.layoutControllers.push({
+        navigationType: "simple",
+        platform: "tizen",
+        controller: new DX.framework.html.SimpleLayoutController
+    });
+    DX.framework.html.layoutControllers.push({
+        navigationType: "simple",
+        platform: "generic",
         controller: new DX.framework.html.SimpleLayoutController
     });
     DX.framework.html.layoutControllers.push({

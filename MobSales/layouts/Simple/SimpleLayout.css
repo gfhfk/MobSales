@@ -81,6 +81,7 @@
 .dx-theme-ios.dx-version-major-6 .simple-layout .view-footer .dx-button {
     width: 97%;
     overflow: visible;
+    height: 40px;
 }
 
 .dx-theme-ios.dx-version-major-5 .simple-layout .view-footer .dx-button .dx-button-content,
@@ -105,9 +106,9 @@
 }
 
 .dx-theme-ios.dx-version-major-7 .simple-layout .layout-content {
-    top: 44px;
+    top: 45px;
     bottom: 0;
-    background-color: #fff;
+    background-color: #EFEFF4;
 }
 
 .dx-theme-ios.dx-version-major-7 .simple-layout .view-footer {
@@ -214,7 +215,7 @@
 }
 .win8phone-layout.has-toolbar-bottom .layout-frame,
 .win8phone-layout .has-toolbar-bottom.layout-frame {
-    bottom: 60px;
+    bottom: 40px;
 }
 
 .win8phone-layout .dx-toolbar.layout-toolbar-bottom {
@@ -231,5 +232,5 @@
 }
 
 .win8phone-layout.has-toolbar-bottom .layout-footer {
-    height: 60px;
+    height: 40px;
 }

@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="layout-footer">
-        <div class="navbar-container">
+        <div class="navbar-container" data-bind="dxNavBar: { }, dxCommandContainer: { id: 'global-navigation' }">
         </div>
     </div>
 
@@ -27,7 +27,7 @@
 <div class="navbar-layout" data-options="dxLayout : { name: 'navbar', platform: 'android' } " >
 
     <div class="layout-header">
-        <div class="navbar-container">
+        <div class="navbar-container" data-bind="dxNavBar: {}, dxCommandContainer: { id: 'global-navigation' }">
         </div>
     </div>
 
@@ -46,7 +46,7 @@
 <div class="navbar-layout" data-options="dxLayout : { name: 'navbar', platform: 'tizen' } " >
 
     <div class="layout-header" >
-        <div class="navbar-container">
+        <div class="navbar-container" data-bind="dxNavBar: {}, dxCommandContainer: { id: 'global-navigation' }">
         </div>
     </div>
 
@@ -79,7 +79,7 @@
         </div>
     </div>
     <div class="layout-footer">
-        <div class="navbar-container">
+        <div class="navbar-container" data-bind="dxNavBar: {}, dxCommandContainer: { id: 'global-navigation' }">
         </div>
     </div>
 
@@ -95,7 +95,7 @@
         <div data-options="dxContentPlaceholder : { name: 'header', contentCssPosition: 'static' }">
             <h1 class="view-title" data-bind="text: title"></h1>
         </div>
-        <div id="navBar" data-options="dxNavBar: { }, dxCommandContainer : { id: 'global-navigation' }"></div>
+        <div data-options="dxNavBar: { }, dxCommandContainer : { id: 'global-navigation' }"></div>
     </div>
     <div class="layout-content-wrapper">
         <div class="layout-content" data-options="dxContentPlaceholder : { name: 'content', contentCssPosition: 'static' }">
